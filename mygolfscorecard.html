@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyGolfScoreCard</title>
+
+    <!-- JQuery reference -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    <!-- Reference to my CSS file -->
+    <link type="text/css" href="mygolfscorecard.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- <table>
+    <tr>
+        <td id="scorecard">GOLF SCORECARD</td>
+    </tr>
+</table> -->
+<div>
+<table id="myTable">
+    <caption id="scorecard">GOLF SCORECARD</caption>
+    <tr>
+        <th id="hole">HOLE</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+        <th>OUT</th>
+        <th>10</th>
+        <th>11</th>
+        <th>12</th>
+        <th>13</th>
+        <th>14</th>
+        <th>15</th>
+        <th>16</th>
+        <th>17</th>
+        <th>18</th>
+        <th>IN</th>
+        <th>TOT</th>
+    </tr>
+    <tr id="blue">
+        <td>BLUE</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+    </tr>
+    <tr id="yellow">
+        <td>YELLOW</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+    </tr>
+    <tr id="white">
+        <td>WHITE</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+    </tr>
+    <tr id="red">
+        <td>RED</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+    </tr>
+    <tr id="par">
+        <td>PAR</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+    </tr>
+    <tr id="handicap">
+        <td>HANDICAP</td>
+        <td id="hcp1"></td>
+        <td id="hcp2"></td>
+        <td id="hcp3"></td>
+        <td id="hcp4"></td>
+        <td id="hcp5"></td>
+        <td id="hcp6"></td>
+        <td id="hcp7"></td>
+        <td id="hcp8"></td>
+        <td id="hcp9"></td>
+        <td id="hcpOut"></td>
+        <td id="hcp10"></td>
+        <td id="hcp11"></td>
+        <td id="hcp12"></td>
+        <td id="hcp13"></td>
+        <td id="hcp14"></td>
+        <td id="hcp15"></td>
+        <td id="hcp16"></td>
+        <td id="hcp17"></td>
+        <td id="hcp18"></td>
+        <td id="hcpIn"></td>
+        <td id="Total"></td>
+
+    </tr>
+    <tr id="playerScore">
+        <td id="player"><input type="text" id="playerName"></td>
+        <td><input size="1"></td>
+        <td><input size="1"></td>
+        <td><input size="1"></td>
+        <td><input size="1"></td>
+        <td><input size="1"></td>
+        <td><input size="1"></td>
+        <td><input size="1"></td>
+        <td><input size="1"></td>
+        <td><input size="1"></td>
+        <td id="out"></td>
+        <td><input size="1"></td>
+        <td><input size="1"></td>
+        <td><input size="1"></td>
+        <td><input size="1"></td>
+        <td><input size="1"></td>
+        <td><input size="1"></td>
+        <td><input size="1"></td>
+        <td><input size="1"></td>
+        <td><input size="1"></td>
+        <td> </td>
+        <td> </td>asdasdffaasd
+    </tr>
+
+</table>
+    <button id="playerNameButton" onclick="addPlayer()">Add Player</button>
+    <button id="playerNameButton" onclick="myDeleteFunction()">Remove Player</button>
+
+</div>
+
+<!-- Reference to my JavaScript file -->
+<script src="mygolfscorecard.js"></script>
+
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQM432qoemfb8-YtxfqfCigW7iKHz8FzA&callback=initMap"></script> -->
+</body>
+</html>
